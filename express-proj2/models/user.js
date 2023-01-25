@@ -35,7 +35,6 @@ const userSchema = new Schema({
     required: true
   },
   applicantInfo: [applicantSchema],
-  listerInfo: [listerSchema]
 }, {
   timestamps: true
 });
