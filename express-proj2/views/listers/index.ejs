@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<table>
+    <caption>Listed Jobs</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Keyword</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% listers.forEach(function(l) { %>
+        <tr>
+            <td><%= l.title %></td>
+            <td><%= l.date %></td>
+            <td><%= l.time %></td>
+            <td><%= l.location %></td>
+            <td><a href="/listers/<%=l._id%>">Description</td>
+        </tr>
+        <% }); %>
+    </tbody>
+
+</table>
+
+<%- include('../partials/footer') %>

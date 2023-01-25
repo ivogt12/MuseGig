@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+<h2><%= title %></h2>
+
+<h3><%= lister.title %></h3>
+<div><%= lister.date %></div>
+<div><%= lister.time %></div>
+<div><%= lister.location %></div>
+<div><%= lister.desc_ %></div>
+<form action="/listers/<%= lister._id %>/apply" method="POST">
+    <label>Please type or paste a brief resume or description detailing your experience/skills:</label>
+    <textarea name="resume"></textarea>
+    <input type="submit" value="Submit">
+</form>
+
+        <% if (user?._id.equals(.user)) { %>
+            <tbody>
+                <% if(user.applicantInfo.length) { %>
+                    <table>
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Desc.</th>
+                          </tr>
+                        </thead>
+                <% user.forEach(function(u) { %>
+                    <td><%= u.name %></td>
+                <% });
+                <% user.applicantInfo.forEach(function(a) { %>
+                <tr>
+                  <td><%= a.resume %></td>
+                  <td>
+                    
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+
+
+
+          <% } %>
+       
+      </table>
+      
+    <% } else { %>
+      <h5>No Applications Yet</h5>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>
