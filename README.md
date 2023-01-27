@@ -7,7 +7,9 @@ A new way to book musicians for custom gigs!
 
 ## Technologies Used
 -Node.js, Express
+
 -MongoDb
+
 -Heroku
 
 ## Getting Started
