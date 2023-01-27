@@ -18,6 +18,8 @@ https://trello.com/b/Zx2Bkv2q/project-2-seir
 
 ### Deployed App:
 
+http://localhost:3000/
+
 ## Icebox Features
 -AAU: I want to be able to save jobs that I am interested in on a privatized segment of my profile page because this would streamline efficiency for organizing jobs.
 
