@@ -10,10 +10,10 @@
             <th>Description</th>
         </tr> -->
     </thead>
-    <tbody>
+    <tbody id="index-body">
         <% listers.forEach(function(l) { %>
         <tr>
-            <td id="lister-subTitle"><%= l.title %></td>
+            <ul><td id="lister-subTitle"><%= l.title %></td></ul>
             <td class="lister-index" ><%= l.date %></td>
             <td class="lister-index" ><%= l.location %></td>
             <td class="lister-index"><a id="desc-link" href="/listers/<%=l._id%>">Description</td>

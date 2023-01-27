@@ -3,11 +3,9 @@
 <main id="show-listers" class="background">
 <h2 class="titles"><%= title %></h2>
 
-<h3><%= lister.title %></h3>
-<div><%= lister.date %></div>
-<div><%= lister.time %></div>
-<div><%= lister.location %></div>
-<div><%= lister.desc_ %></div>
+<ul><h3><%= lister.title %></h3></ul>
+<ul><div><%= lister.date %></div></ul>
+<ul><div><%= lister.desc_ %></div></ul>
 
 <% if(user?.id == lister.user._id) { %>
 
@@ -25,32 +23,29 @@
 </form>
 
 <% } %>
-<h3>Apply</h3>
+<h3><ul>Apply</ul></h3>
 <form action="/listers/<%= lister._id %>/apply" method="POST">
-    <label>Please type or paste a brief resume or description detailing your experience/skills:</label>
-    <textarea name="resume"></textarea>
-    <input type="submit" value="Submit">
+    <label><ul>Please type or paste a brief resume or description detailing your experience/skills:</ul></label>
+    <ul><textarea name="resume"></textarea></ul>
+    <ul><input type="submit" value="Submit"></ul>
 </form>
 <% if(lister.applicant.length) { %>
+  <h4 id='applications'><ul>Applications</ul></h4>
   <table>
   <tbody>
     <% lister.applicant.forEach(function(a) { %>
       <% if(user?.id == lister.user._id) { %>
           <thead>
-            <tr>
-              <th>Name</th>
-              <th>Desc.</th>
-            </tr>
           </thead>
           <tr>
-            <td><%= a.resume %></td>
+            <td><ul><%= a.resume %></ul></td>
           </tr>
       <% } %>
   </tbody>
 </table>
     <% }) %>
     <% } else { %>
-      <h5>You have no applicants yet</h5>
+      <ul><h5>You have no applicants yet</h5></ul>
     <% } %>
 </div>
 </main>

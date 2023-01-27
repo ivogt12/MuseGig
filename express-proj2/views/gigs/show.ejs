@@ -4,9 +4,9 @@
 <main id="show-gig" class="background">
 <h2 class="titles"><%= title %></h2>
 
-<div>
+<div id="show-new">
     <% for(let obj of lister) { %>
-        <div><%= obj.title %></div>
+        <div id="obj-title"><%= obj.title %></div>
         <% if (obj.applicant.length === 0) { %>
             <h5>You have no applicants yet</h5>
         <% } else { %>

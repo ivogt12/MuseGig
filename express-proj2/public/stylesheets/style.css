@@ -89,12 +89,18 @@ nav > a.active {
   width: 150x;
   font-family: Roboto Condensed;
   font-size: large;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row-wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* justify-content: space-between;
+  flex-flow: row-wrap; */
 
   margin: 80px;
   padding: 50px;
+}
+
+#add-gig-form >label {
+  font-size: 30px;
 }
 
 #add-gig-form input[type='submit'] {
@@ -135,6 +141,24 @@ nav > a.active {
 .text-area-new {
   height: 200px;
   width: 300px;
+}
+
+#show-new {
+  display: grid;
+  grid-template-columns: auto;
+  margin: 40px;
+  font-size: 20px;
+}
+
+#obj-title {
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 20px;
+}
+
+#index-listers {
+  margin: 20px;
+  padding: 20px;
 }
 
 
