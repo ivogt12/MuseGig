@@ -5,13 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override');
+
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
 const listersRouter = require('./routes/listers');
-const applicantsRouter = require('./routes/applicants');
 const applyRouter = require('./routes/apply');
 
 var app = express();
@@ -24,6 +25,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 app.use(session({
   secret: process.env.SECRET,
@@ -43,7 +45,6 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/listers', listersRouter)
-app.use('/applicants', applicantsRouter);
 app.use('/', applyRouter);
 
 // catch 404 and forward to error handler

@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
-<form action="/listers" method="POST">
+<main id="add-gig"class="background">
+<h2 class="titles"><%= title %></h2>
+<form id="add-gig-form" action="/listers" method="POST">
     <label>Title:</label>
-    <input type="text" name="title">
-    <label>Date:</label>
-    <input type="number" name="date">
-    <label>Time:</label>
-    <input type="number" name="time">
+    <input class="input-new" type="text" name="title">
+    <label>Date/Time:      </label>
+    <input class="input-new" type="datetime-local" name="date">
     <label>Location/Address:</label>
-    <input type="text" name="location">
-    <label>Please give a brief description of the job:</label>
-    <textarea rows="5" cols="33" name="desc_"></textarea>
+    <input class="input-new" type="text" name="location">
+    <label class="text-area-new">Provide any extra details, such as pay, prerequisities, etc.:</label>
+    <textarea class="text-area-new" class="input-new" rows="5" cols="33" name="desc_"></textarea>
     <input type="submit" value="Upload">
 </form>
-
+</main>
 <%- include('../partials/footer') %>

@@ -9,5 +9,6 @@ router.get('/', listersCtrl.index);
 router.get('/new', listersCtrl.new);
 router.get('/:id', listersCtrl.show);
 router.post('/', listersCtrl.create);
+router.put('/:id', listersCtrl.edit);
 
 module.exports = router;

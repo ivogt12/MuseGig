@@ -1,8 +1,147 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+.landing {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  display: grid;
+  height: 100%;
+}
+
+.landing {
+  background-image: url('../images/landingpage.jpg');
+  background-repeat: no-repeat;
+  border: 10px solid darkgrey;
+  margin: 0;
+
 }
 
 a {
-  color: #00B7FF;
+  color:darkslategray;
+  font-size: 30px;
+  text-decoration: none;
 }
+
+#navbar a {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:center;
+  line-height: 2.5em;
+  font-family: Roboto Condensed;
+  padding: 2px;
+  
+}
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
+#navbar {
+  border-color: black;
+  float: right;
+  border-radius: 8px;
+  width: 10%;
+  background-color:darkgrey;
+  /* margin: 0 0 40px 1200px; */
+  padding: center;
+}
+
+.heading {
+  font-family: Righteous;
+  font-size: 80px;
+  color:aliceblue;
+  margin: 20px 50px 0 0;
+}
+
+.titles {
+  font-family: Righteous;
+  font-size: 70px;
+  margin: 20px 0 0 20px;
+}
+
+.bio {
+  font-family: Righteous;
+  font-size: 75px;
+  color:honeydew;
+  margin: 0 center 25px;
+}
+
+.background {
+  background-color:lavender;
+}
+
+#add-gig,
+#show-gig,
+#index-listers,
+#show-listers {
+  height: 700px;
+}
+
+#add-gig-form {
+  height: 20px;
+  width: 150x;
+  font-family: Roboto Condensed;
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-wrap;
+
+  margin: 80px;
+  padding: 50px;
+}
+
+#add-gig-form input[type='submit'] {
+  width: 6rem;
+  grid-column: 2/3;
+  border-radius: 5px;
+}
+
+#index-rows {
+  font-size: 30px;
+}
+
+.lister-index {
+  font-family: Roboto Condensed;
+  display: grid;
+  margin: 10px 0 0 200px;
+  padding: 5px;
+}
+
+#lister-subTitle {
+  font-weight: bold;
+}
+
+.input-new {
+  padding: 20px;
+}
+
+#time-index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#desc-link {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.text-area-new {
+  height: 200px;
+  width: 300px;
+}
+
+
+footer {
+  font-family: Roboto Condensed;
+  color:black;
+  text-align: center;
+}
+
+

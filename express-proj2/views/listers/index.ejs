@@ -1,29 +1,27 @@
 <%- include('../partials/header') %>
-
-<table>
-    <caption>Listed Jobs</caption>
+<main id="index-listers" class="background">
+<h2 class="titles"><%= title %></h2>
+<table >
     <thead>
-        <tr>
-            <th></th>
-            <th>Keyword</th>
-            <th>Location</th>
+        <!-- <tr id="index-rows">
+            <th>Listed Jobs</th>
             <th>Date</th>
-            <th>Time</th>
+            <th>Location</th>
             <th>Description</th>
-        </tr>
+        </tr> -->
     </thead>
     <tbody>
         <% listers.forEach(function(l) { %>
         <tr>
-            <td><%= l.title %></td>
-            <td><%= l.date %></td>
-            <td><%= l.time %></td>
-            <td><%= l.location %></td>
-            <td><a href="/listers/<%=l._id%>">Description</td>
+            <td id="lister-subTitle"><%= l.title %></td>
+            <td class="lister-index" ><%= l.date %></td>
+            <td class="lister-index" ><%= l.location %></td>
+            <td class="lister-index"><a id="desc-link" href="/listers/<%=l._id%>">Description</td>
         </tr>
         <% }); %>
     </tbody>
 
 </table>
+</main>
 
 <%- include('../partials/footer') %>

@@ -8,14 +8,12 @@
   <title><%= title %></title>
 </head>
 <body>
-  <nav>
-    <a href="/" class="home">Home</a>
+  <nav id="navbar" class="nav">
+    <a href="/" <%- title === 'MuseGig' ? 'class="active"' : '' %>>Home</a>
     <% if (user) { %>
-    <a href="/listers/new" class="upload">Upload Gig</a>
-    <a href="/listers" class="findGig">Find Gigs</a>
-    <a href="/personals">My Gigs</a>
-    <!-- <a href="/applicants/new" class="uploadGig">Apply</a>
-    <a href="/applicants/show/<%= user._id%>">My Profile Page</a> -->
+    <a href="/listers/new" <%- title === 'New Listing' ? 'class="active"' : '' %>>Upload</a>
+    <a href="/listers" <%- title === 'Listings' ? 'class="active"' : '' %>>Find</a>
+    <a href="/listers/<%=user.id%>/apply" <%- title === 'Listing Description' ? 'class="active"' : '' %>>My Gigs</a>
     <a href="/logout">Log Out</a>
     <% } else { %>
     <a href="/auth/google" class="login">Sign In</a>

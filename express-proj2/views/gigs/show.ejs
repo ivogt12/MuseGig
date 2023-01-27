@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<!-- User Profile Page -->
+<main id="show-gig" class="background">
+<h2 class="titles"><%= title %></h2>
+
+<div>
+    <% for(let obj of lister) { %>
+        <div><%= obj.title %></div>
+        <% if (obj.applicant.length === 0) { %>
+            <h5>You have no applicants yet</h5>
+        <% } else { %>
+            <% obj.applicant.forEach(function(a) { %>
+                <div><%= a.resume %></div>
+                <form action="/apply/<%= a._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form>
+            <% }) %>
+        <% } %>
+    <% } %>
+</div>
+</main>
+
+<%- include('../partials/footer') %>

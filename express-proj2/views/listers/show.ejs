@@ -1,50 +1,58 @@
 <%- include('../partials/header') %>
 
-<h2><%= title %></h2>
+<main id="show-listers" class="background">
+<h2 class="titles"><%= title %></h2>
 
 <h3><%= lister.title %></h3>
 <div><%= lister.date %></div>
 <div><%= lister.time %></div>
 <div><%= lister.location %></div>
 <div><%= lister.desc_ %></div>
+
+<% if(user?.id == lister.user._id) { %>
+
+<form action="/listers/<%= lister._id %>?_method=PUT" method="POST">
+  <h3>Edit Gig Details</h3>
+  <label>Title:</label>
+    <input type="text" name="title">
+    <label>Date/Time:</label>
+    <input type="datetime-local" name="date">
+    <label>Location/Address:</label>
+    <input type="text" name="location">
+    <label>Provide any extra details, such as pay, prerequisities, etc.:</label>
+    <textarea rows="5" cols="33" name="desc_"></textarea>
+    <input type="submit" value="Submit">
+</form>
+
+<% } %>
+<h3>Apply</h3>
 <form action="/listers/<%= lister._id %>/apply" method="POST">
     <label>Please type or paste a brief resume or description detailing your experience/skills:</label>
     <textarea name="resume"></textarea>
     <input type="submit" value="Submit">
 </form>
-
-        <% if (user?._id.equals(.user)) { %>
-            <tbody>
-                <% if(user.applicantInfo.length) { %>
-                    <table>
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Desc.</th>
-                          </tr>
-                        </thead>
-                <% user.forEach(function(u) { %>
-                    <td><%= u.name %></td>
-                <% });
-                <% user.applicantInfo.forEach(function(a) { %>
-                <tr>
-                  <td><%= a.resume %></td>
-                  <td>
-                    
-                  </td>
-                </tr>
-              <% }); %>
-            </tbody>
-
-
-
-          <% } %>
-       
-      </table>
-      
+<% if(lister.applicant.length) { %>
+  <table>
+  <tbody>
+    <% lister.applicant.forEach(function(a) { %>
+      <% if(user?.id == lister.user._id) { %>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Desc.</th>
+            </tr>
+          </thead>
+          <tr>
+            <td><%= a.resume %></td>
+          </tr>
+      <% } %>
+  </tbody>
+</table>
+    <% }) %>
     <% } else { %>
-      <h5>No Applications Yet</h5>
+      <h5>You have no applicants yet</h5>
     <% } %>
 </div>
+</main>
 
 <%- include('../partials/footer') %>
