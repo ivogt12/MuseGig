@@ -6,6 +6,9 @@ A new way to book musicians for custom gigs!
 <img width="1440" alt="Screen Shot 2023-01-27 at 8 35 07 AM" src="https://user-images.githubusercontent.com/98562653/215141076-7f2a2147-62ae-48e8-814a-5b3973f0df80.png">
 
 ## Technologies Used
+
+-EJS, CSS
+
 -Node.js, Express
 
 -MongoDb
